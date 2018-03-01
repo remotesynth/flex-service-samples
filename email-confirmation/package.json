@@ -1,0 +1,14 @@
+{
+  "name": "email-confirmation",
+  "version": "0.0.3",
+  "description": "Send an email confirmation on subscribe or unsubscribe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian Rinaldi",
+  "license": "MIT",
+  "dependencies": {
+    "kinvey-flex-sdk": "^2.0.6"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "moderate-text",
+  "version": "0.0.5",
+  "description": "An example Kinvey Flex Service to watch for bad words in text",
+  "main": "index.js",
+  "author": "Brian Rinaldi",
+  "license": "MIT",
+  "dependencies": {
+    "bad-words": "^1.6.1",
+    "kinvey-flex-sdk": "^2.0.6"
+  }
+}
