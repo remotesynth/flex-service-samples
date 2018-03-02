@@ -1,4 +1,6 @@
-[FlexServices] are microservices that can be used for data integrations or business logic within the [Kinvey mBaas](https://www.kinvey.com/). There are three types of FlexServices:
+# Kinvey FlexServices Examples
+
+[FlexServices](https://devcenter.kinvey.com/html5/guides/flex-services) are microservices that can be used for data integrations or business logic within the [Kinvey mBaas](https://www.kinvey.com/). There are three types of FlexServices:
 
 * **FlexData** for data integrations.
 * **FlexAuth** for authentication integrations.

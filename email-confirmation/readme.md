@@ -1,3 +1,5 @@
+# email-confirmation FlexService
+
 email-confirmation is a FlexService intended to be used as a FlexFunction for an `onPreSave` and `onPostSave` collection hook. The function will determine if a subscription confirmation should be sent (and what type) or an unsubscribe confirmation should be sent (or if no email should be sent).
 
 The `onPreSave` method is `emailConfirmationRequiredPreSave`. This method determines if the user is new and subscribed, existing and changed their subscription status to subscribe or existing and changed their subscription status to unsubscribed. However, this is stored in the temporary object store so that no email is sent prior to the create/update successfully occuring.
