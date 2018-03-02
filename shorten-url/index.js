@@ -16,7 +16,6 @@ sdk.service((err, flex) => {
         };
         _getConfig(complete, modules).then( (result) => {
             requestOptions.uri += result;
-            //complete().setBody(requestOptions.uri).done();
             request.post(requestOptions, (error, res, body) => {
                 if (error){
                     complete().setBody(error);

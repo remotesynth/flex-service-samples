@@ -19,7 +19,7 @@ sdk.service((err, flex) => {
         return complete().setBody({'message' : _moderateText(context.body.message) }).ok().next();
     }
 
-    function cleanCommentOnInsert(context, complete, modules) {
+    function cleanCommentOnPreSave(context, complete, modules) {
         if (!context.body.hasOwnProperty('message')) {
             return complete().setBody("A 'message' property must be included").badRequest().done();
         }
@@ -41,5 +41,5 @@ sdk.service((err, flex) => {
 
     flexFunctions.register('checkForProfanity', checkForProfanity);
     flexFunctions.register('moderateText', moderateText);
-    flexFunctions.register('cleanCommentOnInsert', cleanCommentOnInsert);
+    flexFunctions.register('cleanCommentOnPreSave', cleanCommentOnPreSave);
 });
