@@ -7,6 +7,6 @@
   "license": "MIT",
   "dependencies": {
     "bad-words": "^1.6.1",
-    "kinvey-flex-sdk": "^2.0.6"
+    "kinvey-flex-sdk": "^2.0.7"
   }
 }
