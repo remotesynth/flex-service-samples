@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "pretest": "./node_modules/.bin/eslint index.js test",
-    "lint": "./node_modules/.bin/eslint index.js test"
+    "pretest": "./node_modules/.bin/eslint lib index.js test",
+    "lint": "./node_modules/.bin/eslint lib index.js test"
   },
   "author": "Brian Rinaldi",
   "license": "MIT",

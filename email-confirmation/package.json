@@ -4,11 +4,18 @@
   "description": "Send an email confirmation on subscribe or unsubscribe",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretest": "./node_modules/.bin/eslint index.js lib test",
+    "lint": "./node_modules/.bin/eslint index.js lib test"
   },
   "author": "Brian Rinaldi",
   "license": "MIT",
   "dependencies": {
+    "eslint": "4.7.2",
+    "eslint-config-kinvey-platform": "kinvey/eslint-kinvey-platform#v0.1.1",
     "kinvey-flex-sdk": "^2.0.7"
+  },
+  "devDependencies": {
+    "eslint-plugin-import": "^2.9.0"
   }
 }
