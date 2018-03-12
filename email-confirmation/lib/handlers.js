@@ -27,13 +27,13 @@ function emailConfirmationRequiredPreSave(context, complete, modules) {
         complete()
           .ok()
           .next();
-      } else if (result.subscribed === false && context.body.subscribed === 'true') {
+      } else if (result.subscribed === 'false' && context.body.subscribed === 'true') {
         // if they were not subscribed but are subscribing
         tempObjectStore.set('emailType', 'existing');
         complete()
           .ok()
           .next();
-      } else if (result.subscribed === true && context.body.subscribed === 'false') {
+      } else if (result.subscribed === 'true' && context.body.subscribed === 'false') {
         // if they were subscribed but are unsubscribing
         tempObjectStore.set('emailType', 'unsubscribed');
         complete()
@@ -75,20 +75,20 @@ function sendEmailConfirmationPostSave(context, complete, modules) {
   // new subscription
   if (emailType === 'new') {
     mailOptions.subject = 'Welcome to our site!';
-    mailOptions.text_body = "We're excited that you joined!";
-    mailOptions.html_body = "<html>We're <strong>excited</strong> that you joined!</html>";
+    mailOptions.text_body = 'We\'re excited that you joined!';
+    mailOptions.html_body = '<html>We\'re <strong>excited</strong> that you joined!</html>';
   } else if (emailType === 'existing') {
     // existing member
     mailOptions.subject = 'Thanks for subscribing!';
-    mailOptions.text_body = "We'll send you some exciting info!";
-    mailOptions.html_body = "<html>We'll send you some  <strong>exciting</strong> info!</html>";
+    mailOptions.text_body = 'We\'ll send you some exciting info!';
+    mailOptions.html_body = '<html>We\'ll send you some  <strong>exciting</strong> info!</html>';
   } else if (emailType === 'unsubscribed') {
-    mailOptions.subject = "You've been unsubscribed";
-    mailOptions.text_body = "We're sad to see you go!";
-    mailOptions.html_body = "<html>We're <strong>sad</strong> to see you go!</html>";
+    mailOptions.subject = 'You\'ve been unsubscribed';
+    mailOptions.text_body = 'We\'re sad to see you go!';
+    mailOptions.html_body = '<html>We\'re <strong>sad</strong> to see you go!</html>';
   }
 
-  if (emailType) {
+  if (emailType !== 'none') {
     email.send(
       mailOptions.from,
       mailOptions.to,
@@ -103,12 +103,14 @@ function sendEmailConfirmationPostSave(context, complete, modules) {
           complete().setBody(err);
         }
         complete()
+          .setBody(context.body)
           .ok()
           .next();
       }
     );
   }
   complete()
+    .setBody(context.body)
     .ok()
     .next();
 }

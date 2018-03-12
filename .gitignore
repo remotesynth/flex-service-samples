@@ -2,3 +2,4 @@
 **/.kinvey
 **/output.log
 **/.DS_Store
+.vscode

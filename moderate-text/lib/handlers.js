@@ -13,7 +13,7 @@ function _moderateText(text) {
 function checkForProfanity(context, complete) {
   if (!Object.prototype.hasOwnProperty.call(context.body, 'message')) {
     return complete()
-      .setBody('A \'message\' property must be included')
+      .setBody('A \'message\' property must be included.')
       .badRequest()
       .done();
   }
@@ -26,7 +26,7 @@ function checkForProfanity(context, complete) {
 function moderateText(context, complete) {
   if (!Object.prototype.hasOwnProperty.call(context.body, 'message')) {
     return complete()
-      .setBody('A \'message\' property must be included')
+      .setBody('A \'message\' property must be included.')
       .badRequest()
       .done();
   }
@@ -41,7 +41,7 @@ function cleanCommentOnPreSave(context, complete) {
   const result = context.body;
   if (!Object.prototype.hasOwnProperty.call(context.body, 'message')) {
     return complete()
-      .setBody('A \'message\' property must be included')
+      .setBody('A \'message\' property must be included.')
       .badRequest()
       .done();
   }
