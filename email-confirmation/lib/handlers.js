@@ -100,7 +100,7 @@ function sendEmailConfirmationPostSave(context, complete, modules) {
       mailOptions.bcc,
       (err) => {
         if (err) {
-          complete().setBody(err);
+          return complete().setBody(err);
         }
         complete()
           .setBody(context.body)

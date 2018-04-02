@@ -36,12 +36,11 @@ function shortenURL(context, complete, modules) {
     requestOptions.uri += result;
     request.post(requestOptions, (error, res, body) => {
       if (error) {
-        complete().setBody(error);
-      } else {
-        complete()
-          .setBody({ shortUrl: body.id })
-          .done();
+        return complete().setBody(error).runtimeError().done();
       }
+      complete()
+        .setBody({ shortUrl: body.id })
+        .done();
     });
   });
 }
