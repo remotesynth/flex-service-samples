@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<Weather>
+  <main>Today's weather is Cloudy</main>
+  <hitemp>High: 69&#8457;</hitemp>
+  <lowtemp>Low: 52&#8457;</lowtemp>
+  <image>https://ssl.gstatic.com/onebox/weather/64/rain_light.png</image>
+</Weather>
