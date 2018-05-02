@@ -1,0 +1,18 @@
+{
+  "name": "flex-xml",
+  "version": "1.0.8",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon --exec npm start",
+    "deploy": "npm version --no-git-tag-version patch && kinvey deploy",
+    "status": "kinvey job && kinvey status"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "kinvey-flex-sdk": "^2.0.5",
+    "xml2json": "^0.11.0"
+  }
+}
