@@ -1,0 +1,30 @@
+{
+  "name": "flex-soap-reference",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "async": "2.2.0",
+    "kinvey-flex-sdk": "2.0.2",
+    "soap": "0.19.0",
+    "xml2js": "0.4.17"
+  },
+  "devDependencies": {
+    "eslint": "3.12.2",
+    "eslint-config-airbnb-base": "11.0.0",
+    "eslint-plugin-import": "2.2.0",
+    "mocha": "3.2.0",
+    "nock": "9.0.10",
+    "proxyquire": "1.7.11",
+    "request": "2.81.0",
+    "sinon": "2.1.0",
+    "should": "11.2.1",
+    "uuid": "3.0.1"
+  },
+  "scripts": {
+    "pretest": "./node_modules/.bin/eslint lib test",
+    "test": "NODE_ENV=test && mocha test/unit/* && mocha test/integration/*"
+  },
+  "author": "",
+  "license": "Apache-2.0"
+}
