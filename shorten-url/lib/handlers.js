@@ -40,7 +40,6 @@ function shortenURL(context, complete, modules) {
       if (error) {
         return complete().setBody(error).runtimeError().done();
       }
-      console.log(body);
       complete()
         .setBody({ shortUrl: body.shortUrl })
         .done();
