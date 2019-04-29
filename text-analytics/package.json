@@ -13,10 +13,10 @@
   "dependencies": {
     "eslint": "4.7.2",
     "https": "^1.0.0",
-    "kinvey-flex-sdk": "^2.0.7"
+    "kinvey-flex-sdk": "^2.1.0"
   },
   "devDependencies": {
-    "eslint-plugin-import": "^2.9.0",
-    "eslint-config-kinvey-platform": "kinvey/eslint-kinvey-platform#v0.1.1"
+    "eslint-config-kinvey-platform": "github:kinvey/eslint-kinvey-platform#v0.1.1",
+    "eslint-plugin-import": "^2.17.2"
   }
 }
