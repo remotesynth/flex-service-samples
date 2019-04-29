@@ -1,9 +1,9 @@
 const request = require('request');
 
-const configKey = 'Google URL Shortener API';
+const configKey = 'Rebrandly URL Shortener';
 
 function _getConfig(complete, modules) {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     const options = {
       useUserContext: false
     };
@@ -25,21 +25,24 @@ function _getConfig(complete, modules) {
 
 function shortenURL(context, complete, modules) {
   const requestOptions = {
-    uri: 'https://www.googleapis.com/urlshortener/v1/url?key=',
+    uri: 'https://api.rebrandly.com/v1/links',
     body: {
-      longUrl: context.body.longUrl
+      destination: context.body.longUrl
     },
     json: true,
     resolveWithFullResponse: true
   };
   _getConfig(complete, modules).then((result) => {
-    requestOptions.uri += result;
+    requestOptions.headers = {
+      'apikey': result
+    };
     request.post(requestOptions, (error, res, body) => {
       if (error) {
         return complete().setBody(error).runtimeError().done();
       }
+      console.log(body);
       complete()
-        .setBody({ shortUrl: body.id })
+        .setBody({ shortUrl: body.shortUrl })
         .done();
     });
   });
