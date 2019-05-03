@@ -16,4 +16,4 @@ function exampleFunction(context, complete, modules) {
     .next();
 }
 
-exports.exampleOnPreSave = exampleFunction;
+exports.exampleFunction = exampleFunction;
